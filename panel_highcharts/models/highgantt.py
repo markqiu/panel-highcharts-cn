@@ -1,5 +1,6 @@
 """Contains the Bokeh Model for the HighGantt pane"""
 from collections import OrderedDict
+from typing import Optional, List
 
 from .highbase import PATH_HIGH_CHARTS, PATH_REQUIRE_HIGH_CHARTS, PATHS, HighBase
 
@@ -52,6 +53,7 @@ class HighGantt(HighBase):
         highcharts_networkgraph: bool = False,
         highcharts_no_data: bool = False,
         highcharts_offline_exporting: bool = False,
+        others: Optional[List] = None,
     ):
         """Configures the js files to include from https://code.highcharts.com
 
@@ -71,8 +73,10 @@ class HighGantt(HighBase):
             highcharts_networkgraph (bool, optional): Defaults to False.
             highcharts_no_data (bool, optional): Defaults to False.
             highcharts_offline_exporting (bool, optional): Defaults to False.
+            others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
         """
         paths = OrderedDict()
+        others = others or []
         include = {
             "highcharts/modules/gantt": True,
             "highcharts-more": highcharts_more,
@@ -88,6 +92,7 @@ class HighGantt(HighBase):
             "highcharts/modules/networkgraph": highcharts_networkgraph,
             "highcharts/modules/no-data": highcharts_no_data,
             "highcharts/modules/offline-exporting": highcharts_offline_exporting,
+            **{k: True for k in others},
         }
         for key, value in include.items():
             if value:

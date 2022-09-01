@@ -42,6 +42,16 @@ PATHS = OrderedDict(
         ("highcharts/modules/solid-gauge", "https://cdn.highcharts.com.cn/modules/solid-gauge.js"),
         ("highcharts/modules/treemap", "https://cdn.highcharts.com.cn/modules/treemap.js"),
         ("highcharts/modules/variwide", "https://cdn.highcharts.com.cn/modules/variwide.js"),
+        ("highcharts/modules/drag-panes", "https://cdn.highcharts.com.cn/highcharts/modules/drag-panes.js"),
+        ("highcharts/highcharts-zh_CN", "https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"),
+        ("highcharts/indicators/indicators", "https://cdn.highcharts.com.cn/highstock/indicators/indicators.js"),
+        ("highcharts/indicators/ema", "https://cdn.highcharts.com.cn/highstock/indicators/ema.js"),
+        ("highcharts/indicators/macd", "https://cdn.highcharts.com.cn/highstock/indicators/macd.js"),
+        ("highcharts/indicators/pivot-points", "https://cdn.highcharts.com.cn/highstock/indicators/pivot-points.js"),
+        ("highcharts/indicators/volume-by-price", "https://cdn.highcharts.com.cn/highstock/indicators/volume-by-price.js"),
+
+        ("jquery-1.8.3", "https://code.highcharts.com.cn/jquery/jquery-1.8.3.min.js"),
+        ("jquery", "https://code.highcharts.com.cn/jquery/jquery.min.js"),
     ]
 )
 

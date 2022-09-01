@@ -89,13 +89,17 @@ ph.HighChart(object=configuration, sizing_mode="stretch_width")
 | 包含事件标志的图表 | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/包含事件标志的图表.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/包含事件标志的图表.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/包含事件标志的图表.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/包含事件标志的图表) | |
 | 基础折线图 | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/基础折线图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/基础折线图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/基础折线图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/基础折线图) | |
 | 包含成交量的蜡烛图 | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/包含成交量的蜡烛图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/包含成交量的蜡烛图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/包含成交量的蜡烛图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/包含成交量的蜡烛图) | |
+| 包含多条数据 | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/包含多条数据.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/包含多条数据.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/包含多条数据.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/包含多条数据) | |
+| 面积范围图 | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/面积范围图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/面积范围图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/面积范围图.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/面积范围图) | |
+| MACD | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/MACD.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/MACD.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/MACD.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/MACD) | |
+| SMA_VbP | [View](https://github.com/markqiu/panel-highcharts-cn/blob/main/examples/SMA_VbP.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?filepath=examples/SMA_VbP.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=lab/tree/examples/SMA_VbP.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markqiu/panel-highcharts-cn/HEAD?urlpath=panel/SMA_VbP) | |
 
 ## 💡 Inspiration
 
 You can find more inspiration via
 
 - [Awesome Panel](https://awesome-panel.org)
-- [Highcharts](https://www.highcharts.com), [Demos](https://www.highcharts.com/demo)
+- [Highcharts-cn](https://www.highcharts.com.cn), [Demos](https://www.highcharts.com.cn/demo)
 - [Highly Interactive Data Visualization](https://towardsdatascience.com/highly-interactive-data-visualization-cd3a9b082370)
 - [Panel](https://panel.holoviz.org)
 
@@ -110,5 +114,8 @@ When I get the time I would like to
 
 ## 📰 Change Log
 
+- 20220901: 
+  1. js_files函数增加others传参，可直接传入需要加载的js文件的keys列表。 
+  2. 增加几个例子。
 - 20220830: 增加中文例子。修改readme，增加中文说明。
 - 20220822: 初始项目，增加中文插件

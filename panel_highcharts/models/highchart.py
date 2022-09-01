@@ -1,5 +1,6 @@
 """Contains the Bokeh Model for the HighChart pane"""
 from collections import OrderedDict
+from typing import Optional, List
 
 from .highbase import PATH_HIGH_CHARTS, PATH_REQUIRE_HIGH_CHARTS, PATHS, HighBase
 
@@ -55,8 +56,9 @@ class HighChart(HighBase):
         highcharts_3d: bool = False,
         highcharts_treemap: bool = False,
         highcharts_variwide: bool = False,
+        others: Optional[List] = None,
     ):
-        """Configures the js files to include from https://code.highcharts.com
+        """Configures the js files to include from https://code.highcharts.com.cn
 
         Use this before using `panel.extension("highchart")`
 
@@ -80,8 +82,10 @@ class HighChart(HighBase):
             highcharts_3d (bool, optional): Defaults to False.
             highcharts_treemap (bool, optional): Defaults to False.
             highcharts_variwide (bool, optional): Defaults to False.
+            others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
         """
         paths = OrderedDict()
+        others = others or []
         include = {
             "highcharts-3d": highcharts_3d,
             "highcharts-more": highcharts_more,
@@ -102,6 +106,7 @@ class HighChart(HighBase):
             "highcharts/modules/solid-gauge": highcharts_solid_gauge,
             "highcharts/modules/treemap": highcharts_treemap,
             "highcharts/modules/variwide": highcharts_variwide,
+            **{k: True for k in others},
         }
         for key, value in include.items():
             if value:

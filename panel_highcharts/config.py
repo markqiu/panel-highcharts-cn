@@ -70,6 +70,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
     highcharts_treemap: bool = False,
     highcharts_variwide: bool = False,
     mapdata: Optional[List[str]] = None,
+    others: Optional[List[str]] = None,
 ):
     """Configures the js files to include from https://code.highcharts.com
 
@@ -97,6 +98,8 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_3d (bool, optional): Defaults to False.
         highcharts_treemap (bool, optional): Defaults to False.
         highcharts_variwide (bool, optional): Defaults to False.
+        mapdata (list, optional): Defaults to None,
+        others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
     """
     # pylint: disable=import-outside-toplevel
     from .models.highchart import HighChart
@@ -124,6 +127,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_3d=highcharts_3d,
         highcharts_treemap=highcharts_treemap,
         highcharts_variwide=highcharts_variwide,
+        others=others
     )
 
     HighStock.js_files(
@@ -140,6 +144,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_no_data=highcharts_no_data,
         highcharts_offline_exporting=highcharts_offline_exporting,
         highcharts_solid_gauge=highcharts_solid_gauge,
+        others=others
     )
 
     HighMap.js_files(
@@ -158,6 +163,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_no_data=highcharts_no_data,
         highcharts_offline_exporting=highcharts_offline_exporting,
         mapdata=mapdata,
+        others=others
     )
 
     HighGantt.js_files(
@@ -173,6 +179,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_more=highcharts_more,
         highcharts_no_data=highcharts_no_data,
         highcharts_offline_exporting=highcharts_offline_exporting,
+        others=others
     )
 
 
@@ -185,21 +192,21 @@ def _get_theme() -> str:
 
 # Source list: https://github.com/highcharts/highcharts/tree/master/ts/masters/themes
 THEMES = {
-    "avocado": "https://code.highcharts.com/themes/avocado.js",
-    "brand-dark": "https://code.highcharts.com/themes/brand-dark.js",
-    "brand-light": "https://code.highcharts.com/themes/brand-light.js",
-    "dark-blue": "https://code.highcharts.com/themes/dark-blue.js",
-    "dark-green": "https://code.highcharts.com/themes/dark-green.js",
-    "dark": "https://code.highcharts.com/themes/dark-unica.js",
-    "dark-unica": "https://code.highcharts.com/themes/dark-unica.js",
-    "gray": "https://code.highcharts.com/themes/gray.js",
-    "grid-light": "https://code.highcharts.com/themes/grid-light.js",
-    "grid": "https://code.highcharts.com/themes/grid.js",
-    "high-contrast-dark": "https://code.highcharts.com/themes/high-contrast-dark.js",
-    "high-contrast-light": "https://code.highcharts.com/themes/high-contrast-light.js",
-    "sand-signika": "https://code.highcharts.com/themes/sand-signika.js",
-    "skies": "https://code.highcharts.com/themes/skies.js",
-    "sunset": "https://code.highcharts.com/themes/sunset.js",
+    "avocado": "https://cdn.highcharts.com.cn/themes/avocado.js",
+    "brand-dark": "https://cdn.highcharts.com.cn/themes/brand-dark.js",
+    "brand-light": "https://cdn.highcharts.com.cn/themes/brand-light.js",
+    "dark-blue": "https://cdn.highcharts.com.cn/themes/dark-blue.js",
+    "dark-green": "https://cdn.highcharts.com.cn/themes/dark-green.js",
+    "dark": "https://cdn.highcharts.com.cn/themes/dark-unica.js",
+    "dark-unica": "https://cdn.highcharts.com.cn/themes/dark-unica.js",
+    "gray": "https://cdn.highcharts.com.cn/themes/gray.js",
+    "grid-light": "https://cdn.highcharts.com.cn/themes/grid-light.js",
+    "grid": "https://cdn.highcharts.com.cn/themes/grid.js",
+    "high-contrast-dark": "https://cdn.highcharts.com.cn/themes/high-contrast-dark.js",
+    "high-contrast-light": "https://cdn.highcharts.com.cn/themes/high-contrast-light.js",
+    "sand-signika": "https://cdn.highcharts.com.cn/themes/sand-signika.js",
+    "skies": "https://cdn.highcharts.com.cn/themes/skies.js",
+    "sunset": "https://cdn.highcharts.com.cn/themes/sunset.js",
 }
 
 

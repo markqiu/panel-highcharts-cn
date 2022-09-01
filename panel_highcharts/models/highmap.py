@@ -56,8 +56,9 @@ class HighMap(HighBase):
         highcharts_no_data: bool = False,
         highcharts_offline_exporting: bool = False,
         mapdata: Optional[List[str]] = None,
+        others: Optional[List] = None,
     ):
-        """Configures the js files to include from https://code.highcharts.com
+        """Configures the js files to include from https://code.highcharts.com.cn
 
         Use this before using `panel.extension("highchart")`
 
@@ -77,8 +78,11 @@ class HighMap(HighBase):
             highcharts_networkgraph (bool, optional): Defaults to False.
             highcharts_no_data (bool, optional): Defaults to False.
             highcharts_offline_exporting (bool, optional): Defaults to False.
+            mapdata (list, optional): Defaults to None,
+            others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
         """
         paths = OrderedDict()
+        others = others or []
         include = {
             "highcharts/modules/map": True,
             "highcharts-more": highcharts_more,
@@ -96,6 +100,7 @@ class HighMap(HighBase):
             "highcharts/modules/networkgraph": highcharts_networkgraph,
             "highcharts/modules/no-data": highcharts_no_data,
             "highcharts/modules/offline-exporting": highcharts_offline_exporting,
+            **{k: True for k in others},
         }
         for key, value in include.items():
             if value:

@@ -1,5 +1,6 @@
 """Contains the Bokeh Model for the HighStock pane"""
 from collections import OrderedDict
+from typing import List, Optional
 
 from .highbase import PATH_HIGH_CHARTS, PATH_REQUIRE_HIGH_CHARTS, PATHS, HighBase
 
@@ -8,10 +9,11 @@ class HighStock(HighBase):
     """The Bokeh Model for the HighStock pane"""
 
     __javascript__ = [
-        "https://code.highcharts.com/highcharts.js",
-        "https://code.highcharts.com/modules/stock.js",
-        "https://code.highcharts.com/modules/export-data.js",
-        "https://code.highcharts.com/modules/exporting.js",
+        "https://cdn.highcharts.com.cn/highstock/highstock.js",
+        "https://cdn.highcharts.com.cn/modules/stock.js",
+        "https://cdn.highcharts.com.cn/modules/export-data.js",
+        "https://cdn.highcharts.com.cn/highcharts/modules/exporting.js",
+        "https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js",
     ]
 
     # https://api.highcharts.com/class-reference/#toc5
@@ -52,8 +54,9 @@ class HighStock(HighBase):
         highcharts_no_data: bool = False,
         highcharts_offline_exporting: bool = False,
         highcharts_solid_gauge: bool = False,
+        others: Optional[List] = None
     ):
-        """Configures the js files to include from https://code.highcharts.com
+        """Configures the js files to include from https://code.highcharts.com.cn
 
         Use this before using `panel.extension("highchart")`
 
@@ -72,8 +75,10 @@ class HighStock(HighBase):
             highcharts_no_data (bool, optional): Defaults to False.
             highcharts_offline_exporting (bool, optional): Defaults to False.
             highcharts_solid_gauge (bool, optional): Defaults to False.
+            others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
         """
         paths = OrderedDict()
+        others = others or []
         include = {
             "highcharts/modules/stock": True,
             "highcharts-more": highcharts_more,
@@ -89,6 +94,7 @@ class HighStock(HighBase):
             "highcharts/modules/no-data": highcharts_no_data,
             "highcharts/modules/offline-exporting": highcharts_offline_exporting,
             "highcharts/modules/solid-gauge": highcharts_solid_gauge,
+            **{k: True for k in others},
         }
         for key, value in include.items():
             if value:
