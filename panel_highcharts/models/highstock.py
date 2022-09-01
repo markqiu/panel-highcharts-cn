@@ -10,7 +10,6 @@ class HighStock(HighBase):
 
     __javascript__ = [
         "https://cdn.highcharts.com.cn/highstock/highstock.js",
-        "https://cdn.highcharts.com.cn/modules/stock.js",
         "https://cdn.highcharts.com.cn/modules/export-data.js",
         "https://cdn.highcharts.com.cn/highcharts/modules/exporting.js",
         "https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js",
@@ -25,10 +24,10 @@ class HighStock(HighBase):
             },
         ],
         "paths": {
-            "highcharts": "https://code.highcharts.com",
-            "highcharts/modules/stock": "https://code.highcharts.com/modules/stock",
-            "highcharts/modules/exporting": "https://code.highcharts.com/modules/exporting",
-            "highcharts/modules/export-data": "https://code.highcharts.com/modules/export-data",
+            "highstock": "https://cdn.highcharts.com.cn/highstock",
+            "highcharts/highstock": "https://cdn.highcharts.com.cn/highstock/highstock.js",
+            "highcharts/modules/exporting": "https://cdn.highcharts.com.cn/modules/exporting",
+            "highcharts/modules/export-data": "https://cdn.highcharts.com.cn/modules/export-data",
         },
         "exports": {
             "highcharts": "Highcharts",
@@ -100,9 +99,10 @@ class HighStock(HighBase):
             if value:
                 paths[key] = PATHS[key]
 
-        cls.__javascript__ = [PATH_HIGH_CHARTS] + list(paths.values())
+        cls.__javascript__ = cls.__javascript__ + list(paths.values())
         cls.__js_require__["paths"] = {
             "highcharts": PATH_REQUIRE_HIGH_CHARTS,
+            **cls.__js_require__["paths"],
             **{k: v[:-3] for k, v in paths.items()},
         }
         cls.__js_require__["exports"] = {

@@ -88,7 +88,7 @@ class HighBase(LayoutDOM):
             },
         ],
         "paths": {
-            "highcharts": "https://cnd.highcharts.com.cn",
+            "highcharts": "https://cdn.highcharts.com.cn",
             "highcharts/modules/exporting": "https://cdn.highcharts.com.cn/modules/exporting",
             "highcharts/modules/export-data": "https://cdn.highcharts.com.cn/modules/export-data",
         },

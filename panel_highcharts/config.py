@@ -72,7 +72,7 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
     mapdata: Optional[List[str]] = None,
     others: Optional[List[str]] = None,
 ):
-    """Configures the js files to include from https://code.highcharts.com
+    """Configures the js files to include from https://code.highcharts.com.cn
 
     Use this before using `panel.extension("highchart")`
 
@@ -179,6 +179,64 @@ def js_files(  # pylint: disable=too-many-locals, too-many-arguments
         highcharts_more=highcharts_more,
         highcharts_no_data=highcharts_no_data,
         highcharts_offline_exporting=highcharts_offline_exporting,
+        others=others
+    )
+
+
+def highstock_js_files(  # pylint: disable=too-many-locals, too-many-arguments
+    highcharts_accessibility: bool = False,
+    highcharts_annotations: bool = False,
+    highcharts_boost: bool = False,
+    highcharts_broken_axis: bool = False,
+    highcharts_canvas_tools: bool = False,
+    highcharts_data: bool = False,
+    highcharts_drilldown: bool = False,
+    highcharts_export_data: bool = True,
+    highcharts_exporting: bool = True,
+    highcharts_more: bool = False,
+    highcharts_no_data: bool = False,
+    highcharts_offline_exporting: bool = False,
+    highcharts_solid_gauge: bool = False,
+    others: Optional[List[str]] = None,
+):
+    """Configures the js files to include from https://code.highcharts.com.cn/highstock
+
+    Use this before using `panel.extension("highstock")`
+    注意由于js的特性，引入的顺序也很重要，所以单独拆出了highstock_js_files函数
+
+    Args:
+        highcharts_accessibility (bool, optional): Defaults to False.
+        highcharts_annotations (bool, optional): Defaults to False.
+        highcharts_boost (bool, optional): Defaults to False.
+        highcharts_broken_axis (bool, optional): Defaults to False.
+        highcharts_canvas_tools (bool, optional): Defaults to False.
+        highcharts_data (bool, optional): Defaults to False.
+        highcharts_drilldown (bool, optional): Defaults to False.
+        highcharts_export_data (bool, optional): Defaults to True.
+        highcharts_exporting (bool, optional): Defaults to True.
+        highcharts_more (bool, optional): Defaults to False.
+        highcharts_no_data (bool, optional): Defaults to False.
+        highcharts_offline_exporting (bool, optional): Defaults to False.
+        highcharts_solid_gauge (bool, optional): Defaults to False.
+        others (list, optional): a list of key that are defined in highbase.PATHS to be set to True.
+    """
+    # pylint: disable=import-outside-toplevel
+    from .models.highstock import HighStock
+
+    HighStock.js_files(
+        highcharts_accessibility=highcharts_accessibility,
+        highcharts_annotations=highcharts_annotations,
+        highcharts_boost=highcharts_boost,
+        highcharts_broken_axis=highcharts_broken_axis,
+        highcharts_canvas_tools=highcharts_canvas_tools,
+        highcharts_data=highcharts_data,
+        highcharts_drilldown=highcharts_drilldown,
+        highcharts_export_data=highcharts_export_data,
+        highcharts_exporting=highcharts_exporting,
+        highcharts_more=highcharts_more,
+        highcharts_no_data=highcharts_no_data,
+        highcharts_offline_exporting=highcharts_offline_exporting,
+        highcharts_solid_gauge=highcharts_solid_gauge,
         others=others
     )
 

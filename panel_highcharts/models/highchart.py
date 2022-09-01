@@ -9,9 +9,10 @@ class HighChart(HighBase):
     """The Bokeh Model for the HighChart pane"""
 
     __javascript__ = [
-        "https://code.highcharts.com/highcharts.js",
-        "https://code.highcharts.com/modules/export-data.js",
-        "https://code.highcharts.com/modules/exporting.js",
+        "https://cdn.highcharts.com.cn/highcharts.js",
+        "https://cdn.highcharts.com.cn/modules/export-data.js",
+        "https://cdn.highcharts.com.cn/modules/exporting.js",
+        "https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js",
     ]
 
     # https://api.highcharts.com/class-reference/#toc5
@@ -23,9 +24,9 @@ class HighChart(HighBase):
             },
         ],
         "paths": {
-            "highcharts": "https://code.highcharts.com",
-            "highcharts/modules/exporting": "https://code.highcharts.com/modules/exporting",
-            "highcharts/modules/export-data": "https://code.highcharts.com/modules/export-data",
+            "highcharts": "https://cnd.highcharts.com.cn",
+            "highcharts/modules/exporting": "https://cdn.highcharts.com.cn/modules/exporting",
+            "highcharts/modules/export-data": "https://cdn.highcharts.com.cn/modules/export-data",
         },
         "exports": {
             "highcharts": "Highcharts",
