@@ -9,7 +9,8 @@ class HighStock(HighBase):
     """The Bokeh Model for the HighStock pane"""
 
     __javascript__ = [
-        "https://cdn.highcharts.com.cn/highstock/highstock.js",
+        "https://cdn.highcharts.com.cn/highcharts.js",
+        "https://cdn.highcharts.com.cn/modules/stock.js",
         "https://cdn.highcharts.com.cn/modules/export-data.js",
         "https://cdn.highcharts.com.cn/highcharts/modules/exporting.js",
         "https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js",
@@ -24,8 +25,8 @@ class HighStock(HighBase):
             },
         ],
         "paths": {
-            "highstock": "https://cdn.highcharts.com.cn/highstock",
-            "highcharts/highstock": "https://cdn.highcharts.com.cn/highstock/highstock.js",
+            "highcharts": "https://cdn.highcharts.com.cn",
+            "highcharts/modules/stock": "https://cdn.highcharts.com.cn/modules/stock",
             "highcharts/modules/exporting": "https://cdn.highcharts.com.cn/modules/exporting",
             "highcharts/modules/export-data": "https://cdn.highcharts.com.cn/modules/export-data",
         },
